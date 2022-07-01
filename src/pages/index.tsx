@@ -10,7 +10,7 @@ export type Blog ={
 
 const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
   return <div>
-    <p className="text-gray-400">{`Number of articles：${props.totalCount}件`}</p>
+    <p className="text-gray-400">{`Number of articles：${props.totalCount}`}</p>
     <ul className="mt-4 space-y-4">
       {props.contents.map((content)=>{
         return(

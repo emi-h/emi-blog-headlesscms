@@ -11,7 +11,9 @@ const BlogId:NextPage<Props> =(props)=>{
         <div>
             <h1 className="font-bold text-4xl">{props.title}</h1>
             <time dateTime={props.publishedAt} className="block mt-4">{dayjs(props.publishedAt).format("DD/MM/YYYY")}</time>
-            <article className="prose prose-sm" dangerouslySetInnerHTML={{__html:props.content}}></article>
+            <div className="p-4 bg-slate-300 mt-3">
+                <article className="prose prose-sm" dangerouslySetInnerHTML={{__html:props.content}}></article>
+            </div>
         </div>
     );
 };
