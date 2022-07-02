@@ -33,23 +33,25 @@ const [search, setSearch]= useState<MicroCMSListResponse<Blog>>();
 
   return (
   <div>
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit} className="mb-4">
       <input className="border border-black px-2" type="text" name="query" />
       <button className="border border-black px-2">Search</button>
       <button type="reset" className="border border-black px-2" onClick={handleReset}>Reset</button>
     </form>
     <p className="text-gray-400">{`${search ? "Number of articles" : "Total article"}：${totalCount}`}</p>
-    <ul className="mt-4 space-y-4">
-      {contents?.map((content)=>{
-        return(
-          <li key={content.id}>
-            <Link href={`/blog/${content.id}`}>
-              <a className="text-xl hover:text-blue-400">{content.title}</a>
-            </Link>
-          </li>
-        )
-      })}
-    </ul>
+    <div className="bg-gray-300 mt-4 p-4">
+      <ul className="mt-4 space-y-4">
+        {contents?.map((content)=>{
+          return(
+            <li key={content.id}>
+              <Link href={`/blog/${content.id}`}>
+                <a className="text-xl hover:text-blue-400">{content.title}</a>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   </div>
   )
   ;
