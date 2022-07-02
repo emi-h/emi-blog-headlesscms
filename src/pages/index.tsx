@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
@@ -40,12 +41,15 @@ const [search, setSearch]= useState<MicroCMSListResponse<Blog>>();
     </form>
     <p className="text-gray-400">{`${search ? "Number of articles" : "Total article"}：${totalCount}`}</p>
     <div className="bg-gray-300 mt-4 p-4">
-      <ul className="mt-4 space-y-4">
+      <ul className="mt-4 space-y-6">
         {contents?.map((content)=>{
           return(
             <li key={content.id}>
               <Link href={`/blog/${content.id}`}>
-                <a className="text-xl hover:text-blue-400">{content.title}</a>
+                <a className="text-xl hover:text-blue-400">
+                  <h2>{content.title}</h2>
+                  <time className="block mt-2 text-gray-500 text-sm ml-2" dateTime={content.updatedAt}>{dayjs(content.updatedAt).format("DD/MM/YYYY")}</time>
+                  </a>
               </Link>
             </li>
           )

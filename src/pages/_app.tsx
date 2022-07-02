@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Link href="/">
             <a className="text-3xl font-bold">emi blog🤫</a>
           </Link>
-          
           </h1>
       </header>
       <main className="mt-8">
