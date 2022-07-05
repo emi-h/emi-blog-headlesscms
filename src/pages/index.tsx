@@ -52,7 +52,7 @@ const [search, setSearch]= useState<MicroCMSListResponse<Blog>>();
                   </a>
               </Link>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
@@ -62,7 +62,7 @@ const [search, setSearch]= useState<MicroCMSListResponse<Blog>>();
 };
 
 export const getStaticProps:GetStaticProps<MicroCMSListResponse<Blog>>=async()=>{
-  const data = await client.getList<Blog>({endpoint: 'blogs'});
+  const data = await client.getList<Blog>({endpoint: "blogs"});
   return{
     props:data,
   };
