@@ -1,7 +1,7 @@
-import { createClient } from 'microcms-js-sdk'; //ES6
+import { createClient } from "microcms-js-sdk"; //ES6
 
 // Initialize Client SDK.
 export const client = createClient({
-  serviceDomain: "emi-test-blog", // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
+  serviceDomain: "emi-blog", // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
   apiKey: process.env.API_KEY,
 });

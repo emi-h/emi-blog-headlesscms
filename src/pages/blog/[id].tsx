@@ -19,12 +19,12 @@ const BlogId:NextPage<Props> =(props)=>{
 };
 
 export const getStaticPaths:GetStaticPaths<{id:string}> = async()=>{
-    const data = await client.getList({endpoint:'blogs'});
+    const data = await client.getList({endpoint:"blogs"});
     const ids = data.contents.map((content)=>`/blog/${content.id}`);
     return{
         paths:ids,
         fallback:false,
-    }
+    };
 };
 
 export const getStaticProps:GetStaticProps<Props,{id:string}> = async(ctx)=>{
@@ -33,13 +33,13 @@ export const getStaticProps:GetStaticProps<Props,{id:string}> = async(ctx)=>{
         return{notFound:true};
     }
     const data = await client.getListDetail<Blog>({
-        endpoint: 'blogs',
+        endpoint: "blogs",
         contentId: ctx.params.id,
     });
     
     return{
         props:data,
-    }
+    };
 };
 
 
